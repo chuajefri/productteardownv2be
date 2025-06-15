@@ -23,12 +23,13 @@ class RequestData(BaseModel):
 def teardown(data: RequestData):
     prompt = f"Analyze the website: {data.website} from a product strategy perspective."
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[{"role": "user", "content": prompt}],
         max_tokens=300
     )
     return {"summary": response.choices[0].message["content"]}
 
+# Optional: Friendly root message
 @app.get("/")
 def root():
     return {"message": "Product Teardown API is running"}
