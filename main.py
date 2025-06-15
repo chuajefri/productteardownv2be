@@ -21,7 +21,7 @@ class RequestData(BaseModel):
 
 @app.post("/teardown")
 def teardown(data: RequestData):
-    prompt = f"Analyze the website: {data.website} from a product strategy perspective."
+    prompt = f"Analyze the website: {data.website} from a product management perspective."
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}],
