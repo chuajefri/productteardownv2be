@@ -54,7 +54,7 @@ def teardown(data: RequestData):
                     name: "RICE Prioritization",
                     prompt: "Reach: How many users would benefit from improvements? Impact: How much would improvements affect key metrics? Confidence: How certain are we about reach and impact? Effort: What's the development/implementation cost?""
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[{"role": "user", "content": prompt}],
         max_tokens=300
     )
